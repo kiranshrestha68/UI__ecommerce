@@ -1,0 +1,91 @@
+import React from "react";
+import "./topbar.css";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import Badge from "@material-ui/core/Badge";
+import SearchIcon from "@material-ui/icons/Search";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { NavLink } from "react-router-dom";
+
+const Topbar = () => {
+  const styleForShoppingCart = {
+    fontSize: "25px",
+  };
+  return (
+    <div className="topbar">
+      <div className="row">
+        <div className="row-1">
+          <div className="title__logo">
+            <NavLink to="/" className="link__header">
+              KStha_
+            </NavLink>
+          </div>
+          <div className="row-1__items">
+            <SearchIcon className="search__icon" />
+            <input />
+          </div>
+        </div>
+        <div className="row-2">
+          <div className="nav-items">
+            <NavLink
+              to="/"
+              className="link"
+              exact
+              activeClassName="menu__active"
+            >
+              Home
+            </NavLink>
+          </div>
+          <div className="nav-items">
+            <NavLink
+              to="the-shop"
+              className="link"
+              activeClassName="menu__active"
+            >
+              The Shop
+            </NavLink>
+          </div>
+          <div className="nav-items">
+            <NavLink to="mens-clothing" className="link">
+              Men's Clothing
+            </NavLink>{" "}
+            <ExpandMoreIcon />{" "}
+          </div>
+          <div className="nav-items">
+            <NavLink to="womens" className="link">
+              Women's
+            </NavLink>{" "}
+            <ExpandMoreIcon />{" "}
+          </div>
+          <div className="nav-items">
+            <NavLink to="kids-and-boys" className="link">
+              Kids & Boys
+            </NavLink>{" "}
+            <ExpandMoreIcon />{" "}
+          </div>
+        </div>
+        <div className="row-3">
+          <Badge
+            badgeContent={4}
+            color="error"
+            overlap="circular"
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+          >
+            <ShoppingBasketIcon style={styleForShoppingCart} />
+          </Badge>
+
+          <div className="profile__image">
+            <img
+              src="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded/13966370/13966370-1616741383013-bc5a84e6f7dbf.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Topbar;
