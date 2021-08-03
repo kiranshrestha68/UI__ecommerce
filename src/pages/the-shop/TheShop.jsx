@@ -1,9 +1,10 @@
 import React from 'react'
+import Topbar from '../../component/Topbar/Topbar'
 
 const TheShop = () => {
     return (
         <div>
-            hello i am the shop page
+            <Topbar/>
         </div>
     )
 }

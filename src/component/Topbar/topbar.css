@@ -4,18 +4,19 @@
 }
 
 .topbar {
+  justify-content: space-between;
   border-bottom: 1px solid #beb9b9;
   padding-left: 25px;
   position: sticky;
   top: 0;
   background-color: white;
-  box-shadow: 0px 10px 10px -15px #111; 
+  box-shadow: 0px 10px 10px -15px #111;
 
   /* overflow: hidden; */
-  
 }
-.row {
+.topbar__row {
   display: flex;
+
   align-items: center;
 
   padding: 6px;
@@ -58,12 +59,11 @@
   width: 300px;
   padding-left: 10px;
   border-bottom: 1px solid #aca9a9;
-  box-shadow: 0px 10px 10px -15px #111; 
+  box-shadow: 0px 10px 10px -15px #111;
 
   background-color: white;
   border-radius: 20px;
   /* box-shadow: 0px 10px 10px -15px #111;  */
-
 }
 
 .search__icon {
@@ -79,7 +79,6 @@
   color: #808080;
   height: 25px;
   width: 330px;
-
 }
 
 .row-2 {
@@ -118,4 +117,71 @@
   margin-left: 20px;
 
   border-radius: 100%;
+}
+
+.topbar__MenuIcon{
+  display: none;
+}
+
+@media screen and (max-width: 1160px){
+  .topbar__MenuIcon{
+    display: block;
+  }
+
+ 
+
+ .row-1{
+   display: flex;
+   justify-content: flex-start;
+ }
+
+ .row-2{
+
+
+display: flex;
+flex: 12;
+width: 89%;
+
+
+position: absolute;
+top: 50px;
+
+
+left: -90%;
+opacity: 1;
+transition: all 0.5s ease;
+flex-direction: column;
+
+
+
+
+ }
+
+ .row-2.active {
+  background: white;
+  left: 0;
+  
+  transition: all 0.5s ease;
+  z-index: 1;
+  align-content: center;
+  padding-left: 0px;
+}
+
+ 
+
+ .topbar__badge, .profile__image{
+   display: none;
+ }
+
+ .row-1__items{
+  display: none;
+ }
+
+ .topbar__MenuIcon{
+   margin-left: 80%;
+ }
+
+ 
+
+
 }
