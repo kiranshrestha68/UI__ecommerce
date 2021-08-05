@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&family=Roboto:wght@500&family=STIX+Two+Text:wght@400;600;700&display=swap");
+
+.home__row {
+  display: flex;
+  padding: 0 6%;
+  
+}
+
+.home__sidebarCategory {
+  flex: 2;
+  border-right: 1px solid #c9c1c1;
+  box-shadow: 8px 0 10px -6px #c9c1c1;
+
+  /* border-radius: 20px; */
+  padding-right: 35px;
+  /* min-height: 100vh; */
+}
+
+.home__sidebarCategory > h1 {
+  text-transform: uppercase;
+
+  font-size: 18px;
+  color: #1b1a1a;
+  font-family: "Roboto", sans-serif;
+  border-bottom: 1px solid grey;
+  margin-bottom: 15px;
+  padding-bottom: 3px;
+  text-align: center;
+}
+
+.home__sidebarCategory > ul {
+  display: flex;
+  flex-direction: column;
+
+  font-family: "STIX Two Text", serif;
+  font-size: 16px;
+  color: #7c7777;
+  list-style: none;
+}
+
+.home__sidebarCategory > ul > li {
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.home__sidebarCategory > ul > li:hover {
+  color: #131616;
+}
+
+.extra__content > ul {
+  display: flex;
+  flex-direction: column;
+
+  font-family: "STIX Two Text", serif;
+  font-size: 16px;
+  color: #7c7777;
+  list-style: none;
+}
+
+.extra__content > ul > li {
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+.extra__content > ul > li:hover {
+  color: #0f1111;
+}
+
+.home__sidebarSeeMore {
+  color: #443e3e;
+  font-size: 18px;
+  font-family: "STIX Two Text", serif;
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+.home__minOrder {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  color: #2e2a2a;
+}
+
+.home__minOrder > h3,
+.home__priceRange > h3 {
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  margin: 15px 0;
+}
+
+.home__minOrderContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.home__minOrderContent > input {
+  width: 75%;
+  height: 25px;
+  border: 1px solid #beadad;
+  border-radius: 10px;
+  margin-right: 15px;
+  padding-left: 4px;
+  font-size: 13px;
+  color: #444343;
+  outline: none;
+}
+
+.home__minOrderContent > button {
+  padding: 0 8px;
+  border: 1px solid #444141;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #4e4848;
+  
+}
+
+.home__minOrderContent > button:hover {
+  color: white;
+  background-color: #423e3e;
+  transition: 0.8s all;
+}
+
+.home__priceRangeContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.home__priceRangeContent > input {
+  width: 11%;
+  height: 22px;
+  border: 1px solid #beadad;
+  border-radius: 10px;
+  padding-left: 4px;
+  font-size: 13px;
+  color: #444343;
+  outline: none;
+}
+
+.home__priceRangeContent > span {
+  margin: 0 10px;
+  color: #7c7777;
+}
+
+.home__priceRangeContent > button {
+  padding: 3px 8px;
+  margin-left: 20px;
+  border: 1px solid #444141;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #4e4848;
+}
+
+.home__priceRangeContent > button:hover {
+  color: white;
+  background-color: #423e3e;
+  transition: 0.8s all;
+}
+
+.home__sidebarCountries > h3 {
+  text-transform: uppercase;
+  /* text-decoration: underline; */
+  font-size: 18px;
+  color: #1b1a1a;
+  font-family: "Roboto", sans-serif;
+  border-bottom: 1px solid grey;
+  padding-bottom: 3px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.home__radio {
+  margin-right: 7px;
+}
+
+.home__sidebarRadiobuttom-country {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "STIX Two Text", serif;
+  font-size: 16px;
+  color: #2e2a2a;
+}
+
+.home__countryList {
+  padding: 3px 0;
+  cursor: pointer;
+  font-family: "STIX Two Text", serif;
+  color: #615959;
+}
+
+.home__sidebarSeeMore:hover {
+  text-decoration: underline;
+}
+
+.home__productListing {
+  flex: 10;
+
+  margin-left: 8px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ 
+}

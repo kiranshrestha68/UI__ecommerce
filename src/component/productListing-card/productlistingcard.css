@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&family=Roboto:wght@500&family=STIX+Two+Text:wght@400;600;700&display=swap");
+
+.productListing__card {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  min-width: 180px;
+  padding: 5px;
+  margin: 1%;
+  border: 1px solid #e2d8d8;
+  overflow: hidden;
+  box-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.productListing__images {
+  /* border: 1px solid black; */
+  float: left;
+  -ms-transform: rotate(-10deg); /* IE 9 */
+  -webkit-transform: rotate(-10deg); /* Safari */
+  transform: rotate(-10deg);
+  overflow: hidden;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 12px;
+  margin-bottom: 22px;
+  
+}
+
+.productListing__images:hover {
+  transform: scale(1.3);
+  transition: all 0.3s linear;
+}
+
+.productListing__images > img {
+  width: 100%;
+ 
+}
+
+.productListing__title-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productListing__title {
+  color: #444040;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.productListing__price {
+  color: #504d4d;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.productListing__overview {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-family: "STIX Two Text", serif;
+  color: #706767;
+  font-size: 15px;
+  margin: 5px;
+  text-indent: 15px;
+}
+
+.productListing__addToCart {
+  margin: 10px 40px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 13px;
+  background-color: black;
+  color: #ffffff;
+  box-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.5);
+  font-family: "STIX Two Text", serif;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.productListing__addToCart:hover {
+  color: #f5deb3;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./productDetailCard.css";
-import jersey1 from "../../assests/images/jersey1.jpg";
+// import jersey1 from "../../assests/images/jersey1.jpg";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 const ProductDetailCard = (props) => {
