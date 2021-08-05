@@ -17,14 +17,15 @@
 .productListing__images {
   /* border: 1px solid black; */
   float: left;
-  -ms-transform: rotate(-10deg); /* IE 9 */
-  -webkit-transform: rotate(-10deg); /* Safari */
-  transform: rotate(-10deg);
+  -ms-transform: rotate(-8deg); /* IE 9 */
+  -webkit-transform: rotate(-8deg); /* Safari */
+  transform: rotate(-8deg);
   overflow: hidden;
   cursor: pointer;
   background-color: transparent;
   margin: 12px;
   margin-bottom: 22px;
+  object-fit:cover;
   
 }
 
@@ -35,24 +36,38 @@
 
 .productListing__images > img {
   width: 100%;
+  height: 150px;
+  object-fit: cover;
+
  
 }
 
 .productListing__title-price {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+flex-direction: column;
 }
 
 .productListing__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   color: #444040;
   font-family: "Roboto", sans-serif;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.productListing__title:hover{
+  color: black;
+  text-decoration: underline;
+  transition: 0.8s all;
 }
 
 .productListing__price {
-  color: #504d4d;
+  color: #502057;
   font-family: "Roboto", sans-serif;
   margin-bottom: 5px;
   font-size: 14px;
@@ -81,6 +96,8 @@
   font-family: "STIX Two Text", serif;
   cursor: pointer;
   margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 15px;
 }
 .productListing__addToCart:hover {
   color: #f5deb3;

@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import "./home.css";
+import actions from "./redux/actions";
+
 // import Header from "../../component/header/Header";
 import Location from "../../component/location/Location";
 import ProductListingCard from "../../component/productListing-card/ProductListingCard";
@@ -8,6 +12,14 @@ import countryData from "./countrydata";
 
 const Home = () => {
   const [readMore, setReadMore] = useState(false);
+  const  products = useSelector((state) => state.productlisting.allproducts);
+  console.log(products, 'ok');
+
+  const dispatch = useDispatch();
+
+  useEffect((data) => {
+    dispatch(actions.loadproduct(data));
+  }, []);
 
   const linkName = readMore ? "view less " : "view more... ";
   return (
@@ -53,9 +65,9 @@ const Home = () => {
           <div className="home__priceRange">
             <h3>Price</h3>
             <div className="home__priceRangeContent">
-              <input/>
+              <input />
               <span>-</span>
-              <input/>
+              <input />
               <button> OK </button>
             </div>
           </div>
@@ -81,17 +93,18 @@ const Home = () => {
           </div>
         </div>
         <div className="home__productListing">
-          {" "}
-          <ProductListingCard />
-          <ProductListingCard />
-          <ProductListingCard />
-          <ProductListingCard />
-          <ProductListingCard />
-          <ProductListingCard />
-          <ProductListingCard />
-          <ProductListingCard />
-       
-
+          {products &&
+            products.map((p) => (
+              <ProductListingCard
+                key={p.id}
+                id={p.id}
+                title={p.title}
+                price={p.price}
+                desc={p.description}
+                category={p.category}
+                image={p.image}
+              />
+            ))}
         </div>
       </div>
     </div>
