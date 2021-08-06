@@ -4,14 +4,10 @@
 .productDetails__card {
   margin-right: 15%;
 }
- 
-.productDetails__card:hover{
-    border: 1px solid white;
- 
 
+.productDetails__card:hover {
+  border: 1px solid white;
 }
-
-
 
 .productDetailsCard__row {
   display: flex;
@@ -79,7 +75,7 @@
   color: #106e7b;
   text-transform: uppercase;
   font-family: "Lato", sans-serif;
-/* font-weight: bold; */
+  /* font-weight: bold; */
 
   font-size: 14px;
   transition: 0.5s all;

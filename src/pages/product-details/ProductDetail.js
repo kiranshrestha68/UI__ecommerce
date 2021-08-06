@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import "./productdetail.css";
-
 import Topbar from "../../component/Topbar/Topbar";
 import Location from "../../component/location/Location";
-import jersey from "../../assests/images/jersey.jpg";
+// import jersey from "../../assests/images/jersey.jpg";
 import jersey1 from "../../assests/images/jersey1.jpg";
-
 import jersey2 from "../../assests/images/jersey2.jpeg";
-
 import jersey3 from "../../assests/images/jersey3.jpeg";
 import jacket from "../../assests/images/jacket.jpg";
-
 import StarIcon from "@material-ui/icons/Star";
 import ProductDetailCard from "../../component/productDetail-card/ProductDetailCard";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
   const [counter, setCounter] = useState(1);
@@ -23,6 +21,22 @@ const ProductDetail = () => {
     decrementCounter = () => setCounter(1);
   }
 
+  const { id } = useParams();
+  console.log(id);
+  const productdetail = useSelector(
+    (state) => state.productlisting.allproducts
+  );
+  // console.log(moviedetail, "ok");
+  const singledata = productdetail?.filter((x) => x.id == id);
+  // console.log(singledata, "singledata ok");
+
+  if (!singledata) {
+    return (
+     
+      <h2 style={{ position: "absolute" ,top: "30%"}}> no product found id no {id} </h2>
+    );
+  }
+
   return (
     <>
       <Topbar />
@@ -31,44 +45,58 @@ const ProductDetail = () => {
       <div className="product__details">
         <div className="row">
           <div className="row__1">
-            <div className="productDetails__row">
-              <div className="productDetails__row1">
-                <img className="productDetail__images" src={jersey} alt="" />
-              </div>
-              <div className="productDetails__row2">
-                <div className="rating__reviews">
-                  <StarIcon className="starIcon" />
-                  <span className="products__rating"> 4.5</span>
-                  <span className="products__reviews"> (23 Reviews) </span>
-                </div>
-                <div className="products__title"> w110 t-shirt </div>
-                <div className="products__price"> Rs. 5000 </div>
-                <div className="products__brands"> fabric </div>
-                <div className="products__type">
-                  <div className="products__typeStyle1"> comded cotton </div>
-                  <div className="products__typeStyle2"> supima cotton </div>
-                </div>
-                <div className="addtobuttom__quantity">
-                  <button className="addtocart"> Add to Cart </button>
-                  <div className="quantity__control">
-                    <button
-                      className="quantity__controlItems"
-                      onClick={incrementCounter}
-                    >
-                      {" "}
-                      +{" "}
-                    </button>
-                    <span className="quantity__number"> {counter} </span>
-                    <button
-                      className="quantity__controlItems"
-                      onClick={decrementCounter}
-                    >
-                      {" "}
-                      -{" "}
-                    </button>
+            <div>
+              {singledata && singledata?.map((m) => (
+                <div  className="productDetails__row">
+                  <div className="productDetails__row1">
+                    <img
+                      className="productDetail__images"
+                      src={m.image}
+                      alt=""
+                    />
+                  </div>
+                  <div className="productDetails__row2">
+                    <div className="rating__reviews">
+                      <StarIcon className="starIcon" />
+                      <span className="products__rating"> 4.5</span>
+                      <span className="products__reviews"> (23 Reviews) </span>
+                    </div>
+                    <div className="products__title"> {m.title} </div>
+                    <div className="products__price"> Rs.{m.price}/- </div>
+                    <div className="products__brands"> fabric </div>
+                    <div className="products__type">
+                      <div className="products__typeStyle1">
+                        {" "}
+                        comded cotton{" "}
+                      </div>
+                      <div className="products__typeStyle2">
+                        {" "}
+                        supima cotton{" "}
+                      </div>
+                    </div>
+                    <div className="addtobuttom__quantity">
+                      <button className="addtocart"> Add to Cart </button>
+                      <div className="quantity__control">
+                        <button
+                          className="quantity__controlItems"
+                          onClick={incrementCounter}
+                        >
+                          {" "}
+                          +{" "}
+                        </button>
+                        <span className="quantity__number"> {counter} </span>
+                        <button
+                          className="quantity__controlItems"
+                          onClick={decrementCounter}
+                        >
+                          {" "}
+                          -{" "}
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
             <div className="details">
               <div className="productDetails__size">

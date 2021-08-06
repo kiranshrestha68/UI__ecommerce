@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import "./home.css";
 import actions from "./redux/actions";
-
 // import Header from "../../component/header/Header";
 import Location from "../../component/location/Location";
 import ProductListingCard from "../../component/productListing-card/ProductListingCard";
@@ -12,19 +10,20 @@ import countryData from "./countrydata";
 
 const Home = () => {
   const [readMore, setReadMore] = useState(false);
-  const  products = useSelector((state) => state.productlisting.allproducts);
-  console.log(products, 'ok');
+  const [searchTerm, setsearchTerm] = useState("");
+
+  const products = useSelector((state) => state.productlisting.allproducts);
 
   const dispatch = useDispatch();
 
   useEffect((data) => {
     dispatch(actions.loadproduct(data));
-  }, []);
-
+  },[]);
   const linkName = readMore ? "view less " : "view more... ";
+
   return (
     <div>
-      <Topbar />
+      <Topbar onChange={(e) => setsearchTerm(e.target.value)}/>
 
       <Location />
 
@@ -92,9 +91,33 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+
+        {/* <div>
+  {people.filter(person => 
+    person.age < 60).map(filteredPerson => (
+    <li>
+      {filteredPerson.name}
+    </li>
+  ))}
+</div> */}
+
+
+
+
         <div className="home__productListing">
-          {products &&
-            products.map((p) => (
+          {
+            products.filter(val => {
+              if(searchTerm === ""){
+                return val;
+              }else if (
+                val.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                val.category.toLowerCase().includes(searchTerm.toLowerCase())
+                
+              ){
+                return val;
+              }
+            }).map((p) => (
               <ProductListingCard
                 key={p.id}
                 id={p.id}

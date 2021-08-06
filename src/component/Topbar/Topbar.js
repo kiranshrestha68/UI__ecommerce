@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 
-const Topbar = () => {
+const Topbar = (props) => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
@@ -27,7 +27,7 @@ const Topbar = () => {
           </div>
           <div className="row-1__items">
             <SearchIcon className="search__icon" />
-            <input />
+            <input onChange={props.onChange} />
           </div>
         </div>
         

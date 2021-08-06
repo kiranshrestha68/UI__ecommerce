@@ -206,3 +206,10 @@
   flex-wrap: wrap;
  
 }
+
+@media screen and (max-width: 1160px) {
+
+  .home__sidebarCategory{
+    display: none;
+  }
+}
