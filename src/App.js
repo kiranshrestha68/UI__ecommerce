@@ -7,6 +7,8 @@ import MensClothing from "./pages/mens-clothing/MensClothing";
 import Womens from "./pages/women's/Womens";
 import KidsandBoys from "./pages/kids-&-boys/KidsandBoys";
 import ProductDetail from "./pages/product-details/ProductDetail";
+import ShopppingCart from "./pages/shopping-cart/ShopppingCart";
+
 // import Location from "./component/location/Location";
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Route exact path="/womens" component={Womens} />
           <Route exact path="/kids-and-boys" component={KidsandBoys} />
           <Route  path="/product-detail/:id" component={ProductDetail} />
+          <Route exact path="/shopping-cart" component={ShopppingCart} />
+
 
         </Switch>
       </BrowserRouter>

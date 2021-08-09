@@ -6,7 +6,7 @@ const ProductListingCard = ({ id, title, price, desc, category, image }) => {
   return (
     <>
     
-      <NavLink  to={`product-detail/${id}`} className="productListing__card productListing__link">
+      <div className="productListing__card ">
         <div className="productListing__images">
           <img src={image} alt="bag" />
         </div>
@@ -24,7 +24,7 @@ const ProductListingCard = ({ id, title, price, desc, category, image }) => {
 
         <div className="productListing__overview">{desc}</div>
         <button className="productListing__addToCart"> Add to cart </button>
-      </NavLink>
+      </div>
     </>
   );
 };

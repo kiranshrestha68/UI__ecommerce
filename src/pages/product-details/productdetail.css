@@ -21,10 +21,15 @@
 
 }
 
-.productDetails__row {
+.productDetails__row--1{
   display: flex;
   flex-direction: row;
  
+}
+
+.productDetails__row{
+  display: flex;
+  flex-direction: column;
 }
 
 .productDetails__row1 {

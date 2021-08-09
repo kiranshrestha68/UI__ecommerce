@@ -74,7 +74,8 @@ const Topbar = (props) => {
 
         <div className="row-3">
           <div className="topbar__badge">
-            <Badge
+          <NavLink to="/shopping-cart" className="topbar__shoppingCart">
+          <Badge
               badgeContent={4}
               color="error"
               overlap="circular"
@@ -85,6 +86,8 @@ const Topbar = (props) => {
             >
               <ShoppingBasketIcon style={styleForShoppingCart} />
             </Badge>
+          </NavLink>
+        
           </div>
 
           <div className="profile__image">

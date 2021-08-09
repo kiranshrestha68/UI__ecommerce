@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto&display=swap");
+
+.shoppingCart__container {
+  padding: 0 10%;
+}
+
+.shoppingCart__heading {
+  font-family: "Roboto", sans-serif;
+  color: #524d4d;
+  font-size: 33px;
+  margin-bottom: 30px;
+}
+
+.shoppingCart__row {
+  display: flex;
+}
+
+.shoppingCart__cart {
+  flex: 8;
+}
+
+.shoppingCart__titles {
+  display: flex;
+  flex-direction: row;
+  font-family: "Lato", sans-serif;
+  color: grey;
+  text-transform: uppercase;
+}
+
+.shoppingCart__productDetails {
+  flex: 7;
+  display: flex;
+}
+
+.shoppingCart__quantityTitle {
+  flex: 2.5;
+  margin-left: 70px;
+
+  /* border: 1px solid red; */
+}
+
+.shoppingCart__total {
+  flex: 2.5;
+  margin-left: 80px;
+}
+
+.shoppingCart__card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.shoppingCart__cardContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #d8cdcd;
+}
+
+.shoppingCart__images-details > img {
+  height: 180px;
+
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  width: 38%;
+  min-width: 120px;
+  margin-right: 10px;
+}
+
+.shoppingCart__productCartdetails > h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 6px;
+  color: #363131;
+}
+
+.shoppingCart__productCartdetails > h4 {
+  color: #863491;
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-family: "Lato", sans-serif;
+}
+
+.shoppingCart__productCartdetails > p {
+  color: #524b4b;
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-family: "Lato", sans-serif;
+}
+
+.shoppingCart__productCartdetails > p2 {
+  color: #413a3a;
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-family: "Lato", sans-serif;
+}
+
+.shoppingCart__images-details {
+  flex: 7;
+  /* border: 1px solid red; */
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.shoppingCart__quantity-remove {
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  padding-left: 6px;
+}
+
+.shoppingCart__quantity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.shoppingCart__quantityPlus,
+.shoppingCart__quantityMinus {
+  border: 1px solid grey;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: grey;
+  cursor: pointer;
+}
+
+.shoppingCart__quantityPlus:hover,
+.shoppingCart__quantityMinus:hover {
+  background-color: #252323;
+  color: white;
+  transition: 0.8s all;
+}
+
+.shoppingCart__quantity > input {
+  width: 20%;
+  height: 28px;
+  margin: 0 3px;
+  padding-left: 5px;
+  color: #4e4949;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 10px;
+  font-size: 15px;
+  overflow: hidden;
+  text-align: ce;
+}
+
+.shoppingCart__remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #aca2a2;
+  margin: 15px 200px 0 0;
+  text-align: center;
+  padding: 6px;
+  border-radius: 50%;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all ease-in-out 1s;
+  color: #504d4d;
+}
+
+.shoppingCart__remove:hover {
+  transform: scale(1.1) rotate(360deg);
+  background-color: #b12626;
+  color: wheat;
+}
+
+.shoppingCart__totalss {
+  flex: 2.5;
+  color: #645b5b;
+  font-family: "Lato", sans-serif;
+}
+
+.shoppingCart__paymentContainer {
+  flex: 4;
+
+  margin-left: 2%;
+}
+
+.shoppingCart__payment {
+  background-color: #f5eded;
+  border-radius: 15px;
+  padding: 12px;
+  width: 75%;
+  box-shadow: 3px 3px 3px rgba(0.5, 0.5, 0.5, 0.5);
+
+  
+}
+
+.shoppingCart__paymentTypes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shoppingCart__checkout {
+  border: 1px solid #418fad;
+  background-color: #418fad;
+  color: wheat;
+  padding: 2% 28%;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Lato", sans-serif;
+  border-radius: 13px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.shoppingCart__checkout:hover {
+  color: white;
+  background-color: #246781;
+  color: black;
+  transition: 0.5s all;
+}
+
+.shoppingCart__or {
+  color: grey;
+  margin: 10px 0;
+  font-family: "Lato", sans-serif;
+
+  font-size: 15px;
+}
+
+.shoppingCart__esewa {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  padding: 2px 0;
+  margin: 5px 30px;
+  background-color: #dfd3d3;
+}
+
+.shoppingCart__esewa > img {
+  width: 35%;
+  height: 50px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.shoppingCart__esewa>img:hover {
+    transform: scale(1.1) ;
+   
+  }
+
+.shoppingCart__orderSummary {
+  color: #504b4b;
+  font-family: "Lato", sans-serif;
+
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.shoppingCart__prices {
+  display: flex;
+  color: #423f3f;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  margin: 30px 25px 30px 10px;
+}
+
+.shoppingCart__shipping-Fee{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    margin: 30px 30px 30px 10px;
+    color: #5f5656;
+    font-size: 19px;
+
+}
+
+.shoppingCart__fee{
+    font-size: 16px;
+}
+
+.shoppingCart__standardFree{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    margin: 30px 30px 25px 10px;
+    color: #5f5656;
+    font-size: 18px;
+    border: 1px solid #928c8c;
+    padding: 8px 20px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+
+
+}
+
+.shoppingCart__grand-total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    margin: 0 20px 0px 10px;
+    color: #5f5656;
+    font-size: 18px;
+
+}
+
+.shoppingCart__grand{
+    margin-right: 50px;
+}
+
+.shoppingCart__vatIncluded{
+    color: #6d6868;
+    margin-top: 12px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+
+}
+
+.shoppingCart__easyReturns, .shoppingCart__shippingInfo{
+    color: #504949;
+    margin-top: 12px;
+    font-family: "Roboto", sans-serif;
+    font-size: 19px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 10px;
+   
+}
+
+.shoppingCart__easyReturns:hover, .shoppingCart__shippingInfo:hover{
+color: #292525;
+transition: 0.8s all;
+}

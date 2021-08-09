@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Womens = () => {
-    return (
-        <div>
-            hello me women page
-        </div>
-    )
+  return (
+    <div>
+      hello ma womens page
+    </div>
+  )
 }
 
 export default Womens

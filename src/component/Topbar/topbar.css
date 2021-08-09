@@ -48,6 +48,10 @@
   color: #888484;
 }
 
+.topbar__shoppingCart{
+color: inherit;
+}
+
 .menu__active {
   color: black;
 

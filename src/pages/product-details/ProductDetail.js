@@ -26,16 +26,20 @@ const ProductDetail = () => {
   const productdetail = useSelector(
     (state) => state.productlisting.allproducts
   );
+  const loading = useSelector((state) => state.productlisting.loading);
+  const error = useSelector((state) => state.productlisting.error);
   // console.log(moviedetail, "ok");
   const singledata = productdetail?.filter((x) => x.id == id);
   // console.log(singledata, "singledata ok");
 
-  if (!singledata) {
-    return (
-     
-      <h2 style={{ position: "absolute" ,top: "30%"}}> no product found id no {id} </h2>
-    );
-  }
+  // if (!singledata) {
+  //   return (
+  //     <h2 style={{ position: "absolute", top: "600px" }}>
+  //       {" "}
+  //       no product found id no {id}{" "}
+  //     </h2>
+  //   );
+  // }
 
   return (
     <>
@@ -45,114 +49,132 @@ const ProductDetail = () => {
       <div className="product__details">
         <div className="row">
           <div className="row__1">
-            <div>
-              {singledata && singledata?.map((m) => (
-                <div  className="productDetails__row">
-                  <div className="productDetails__row1">
-                    <img
-                      className="productDetail__images"
-                      src={m.image}
-                      alt=""
-                    />
+            {singledata.loading && <p> loading... </p>}
+
+            {singledata.length > 0 &&
+              singledata?.map((m) => (
+                <div className="productDetails__row">
+                  <div className="productDetails__row--1">
+                    {" "}
+                    <div className="productDetails__row1">
+                      <img
+                        className="productDetail__images"
+                        src={m.image}
+                        alt=""
+                      />
+                    </div>
+                    <div className="productDetails__row2">
+                      <div className="rating__reviews">
+                        <StarIcon className="starIcon" />
+                        <span className="products__rating"> 4.5</span>
+                        <span className="products__reviews">
+                          {" "}
+                          (23 Reviews){" "}
+                        </span>
+                      </div>
+                      <div className="products__title"> {m.title} </div>
+                      <div className="products__price"> Rs.{m.price}/- </div>
+                      <div className="products__brands"> fabric </div>
+                      <div className="products__type">
+                        <div className="products__typeStyle1">
+                          {" "}
+                          comded cotton{" "}
+                        </div>
+                        <div className="products__typeStyle2">
+                          {" "}
+                          supima cotton{" "}
+                        </div>
+                      </div>
+                      <div className="addtobuttom__quantity">
+                        <button className="addtocart"> Add to Cart </button>
+                        <div className="quantity__control">
+                          <button
+                            className="quantity__controlItems"
+                            onClick={incrementCounter}
+                          >
+                            {" "}
+                            +{" "}
+                          </button>
+                          <span className="quantity__number"> {counter} </span>
+                          <button
+                            className="quantity__controlItems"
+                            onClick={decrementCounter}
+                          >
+                            {" "}
+                            -{" "}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="productDetails__row2">
-                    <div className="rating__reviews">
-                      <StarIcon className="starIcon" />
-                      <span className="products__rating"> 4.5</span>
-                      <span className="products__reviews"> (23 Reviews) </span>
-                    </div>
-                    <div className="products__title"> {m.title} </div>
-                    <div className="products__price"> Rs.{m.price}/- </div>
-                    <div className="products__brands"> fabric </div>
-                    <div className="products__type">
-                      <div className="products__typeStyle1">
-                        {" "}
-                        comded cotton{" "}
-                      </div>
-                      <div className="products__typeStyle2">
-                        {" "}
-                        supima cotton{" "}
+
+                  <div className="details">
+                    <div className="productDetails__size">
+                      <div className="size__title">Size</div>
+                      <div className="sizes">
+                        <div className="size1">m</div>
+                        <div className="size">s</div>
+                        <div className="size">l</div>
+                        <div className="size">xl</div>
+                        <div className="size">xxl</div>
                       </div>
                     </div>
-                    <div className="addtobuttom__quantity">
-                      <button className="addtocart"> Add to Cart </button>
-                      <div className="quantity__control">
-                        <button
-                          className="quantity__controlItems"
-                          onClick={incrementCounter}
-                        >
+
+                    <div className="productDetails__colors">
+                      <div className="color__title">Colors</div>
+                      <div className="colors">
+                        <div className="white"></div>
+                        <div className="black"></div>
+                        <div className="dark__red"></div>
+                        <div className="fikka__blue"></div>
+                        <div className="fikka__green"></div>
+                        <div className="sky__blue"></div>
+                        <div className="pink"></div>
+                      </div>
+                    </div>
+
+                    <div className="desc__rev">
+                      <span className="desc"> Description</span>
+                      <span className="rev">
+                        {" "}
+                        Reviews <span className="rev__23"> 23 </span>
+                      </span>
+                    </div>
+
+                    <div className="size__measurement">
+                      <div className="sizeMeasurement__title">
+                        Size Measurement (in inch):
+                      </div>
+
+                      <div className="measurements">
+                        <div className="measurement">
                           {" "}
-                          +{" "}
-                        </button>
-                        <span className="quantity__number"> {counter} </span>
-                        <button
-                          className="quantity__controlItems"
-                          onClick={decrementCounter}
-                        >
+                          - M (medium):&emsp;Chest 37, Height 27
+                        </div>
+                        <div className="measurement">
                           {" "}
-                          -{" "}
-                        </button>
+                          - L (large):&emsp;Chest 39, Height 28
+                        </div>
+
+                        <div className="measurement">
+                          {" "}
+                          - XL (Extra large):&emsp;Chest 41, Height 29
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
-            </div>
-            <div className="details">
-              <div className="productDetails__size">
-                <div className="size__title">Size</div>
-                <div className="sizes">
-                  <div className="size1">m</div>
-                  <div className="size">s</div>
-                  <div className="size">l</div>
-                  <div className="size">xl</div>
-                  <div className="size">xxl</div>
-                </div>
-              </div>
 
-              <div className="productDetails__colors">
-                <div className="color__title">Colors</div>
-                <div className="colors">
-                  <div className="white"></div>
-                  <div className="black"></div>
-                  <div className="dark__red"></div>
-                  <div className="fikka__blue"></div>
-                  <div className="fikka__green"></div>
-                  <div className="sky__blue"></div>
-                  <div className="pink"></div>
-                </div>
-              </div>
-
-              <div className="desc__rev">
-                <span className="desc"> Description</span>
-                <span className="rev">
-                  {" "}
-                  Reviews <span className="rev__23"> 23 </span>
-                </span>
-              </div>
-
-              <div className="size__measurement">
-                <div className="sizeMeasurement__title">
-                  Size Measurement (in inch):
-                </div>
-
-                <div className="measurements">
-                  <div className="measurement">
-                    {" "}
-                    - M (medium):&emsp;Chest 37, Height 27
-                  </div>
-                  <div className="measurement">
-                    {" "}
-                    - L (large):&emsp;Chest 39, Height 28
-                  </div>
-
-                  <div className="measurement">
-                    {" "}
-                    - XL (Extra large):&emsp;Chest 41, Height 29
-                  </div>
-                </div>
-              </div>
-            </div>
+            {singledata.length === 0 && !loading && (
+              <p
+                style={{ textAlign: "center", color: "grey", fontSize: "18px" }}
+              >
+                {" "}
+                Opps!... No products found!{" "}
+              </p>
+            )}
+            {error && !loading && <p> {error} </p>}
           </div>
 
           <div className="row__2">
