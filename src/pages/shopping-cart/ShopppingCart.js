@@ -167,7 +167,7 @@ const ShopppingCart = () => {
                   {" "}
                   You haven't added any item in the cart. <br />
                   Add something in your Cart.. <br />
-                  THANK YOU!
+                  THANK YOU!!
                 </p>
               )}
             </div>
