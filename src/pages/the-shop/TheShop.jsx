@@ -5,6 +5,7 @@ const TheShop = () => {
     return (
         <div>
             <Topbar/>
+            hello
         </div>
     )
 }

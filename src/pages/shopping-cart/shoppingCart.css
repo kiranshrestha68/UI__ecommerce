@@ -138,7 +138,7 @@
 }
 
 .shoppingCart__quantity > input {
-  width: 20%;
+  width: 13%;
   height: 28px;
   margin: 0 3px;
   padding-left: 5px;
@@ -249,6 +249,7 @@
 
 .shoppingCart__esewa>img:hover {
     transform: scale(1.1) ;
+    transition: 0.3s all;
    
   }
 
@@ -260,13 +261,28 @@
   margin-left: 10px;
 }
 
+.shoppingCart__totalItems{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #504b4b;
+  font-family: "Lato", sans-serif;
+
+  margin-top: 20px;
+
+  margin-left: 10px;
+  margin-right: 35px;
+ 
+}
+
 .shoppingCart__prices {
   display: flex;
   color: #423f3f;
   justify-content: space-between;
   align-items: center;
   font-family: "Roboto", sans-serif;
-  margin: 30px 25px 30px 10px;
+  margin: 15px 25px 30px 10px;
 }
 
 .shoppingCart__shipping-Fee{

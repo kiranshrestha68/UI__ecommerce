@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./topbar.css";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import Badge from "@material-ui/core/Badge";
@@ -7,10 +7,22 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { NavLink } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
+import { useSelector } from "react-redux";
 
 const Topbar = (props) => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+  const [cartCount , setCartCount ] = useState(0);
+  const cart = useSelector((state) => state.productlisting.cart);
+
+  useEffect(() => {
+    let count = 0;
+    cart.forEach((item) => {
+      count += item.qty;
+    })
+    setCartCount(count);
+  }, [cart, cartCount]);
+
 
   // const closeMobileMenu = () => setClick(false);
   const styleForShoppingCart = {
@@ -76,7 +88,7 @@ const Topbar = (props) => {
           <div className="topbar__badge">
           <NavLink to="/shopping-cart" className="topbar__shoppingCart">
           <Badge
-              badgeContent={4}
+              badgeContent={cartCount}
               color="error"
               overlap="circular"
               anchorOrigin={{
