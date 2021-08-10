@@ -55,7 +55,7 @@
   flex-direction: row;
   margin: 15px 0;
   padding-bottom: 9px;
-  border-bottom: 1px solid #d8cdcd;
+  border-bottom: 1px solid #c5c0c0;
 }
 
 .shoppingCart__images-details > img {
@@ -138,8 +138,8 @@
 }
 
 .shoppingCart__quantity > input {
-  width: 13%;
-  height: 28px;
+  width: 20%;
+  height: 30px;
   margin: 0 3px;
   padding-left: 5px;
   color: #4e4949;
@@ -148,7 +148,7 @@
   border-radius: 10px;
   font-size: 15px;
   overflow: hidden;
-  text-align: ce;
+  text-align: center;
 }
 
 .shoppingCart__remove {
@@ -186,11 +186,11 @@
 }
 
 .shoppingCart__payment {
-  background-color: #f5eded;
+  background-color: #f3f1f1;
   border-radius: 15px;
   padding: 12px;
   width: 75%;
-  box-shadow: 3px 3px 3px rgba(0.5, 0.5, 0.5, 0.5);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
   
 }

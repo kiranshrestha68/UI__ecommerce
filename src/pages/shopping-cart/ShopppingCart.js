@@ -71,7 +71,7 @@ const ShopppingCart = () => {
             <h1 className="shoppingCart__heading"> Shopping Cart</h1>
             <div
               style={{
-                border: "3px solid #eee8e8",
+                border: "1px solid #eee8e8",
                 marginBottom: "20px",
                 borderRadius: "5px",
                 marginRight: "38%",
@@ -148,7 +148,9 @@ const ShopppingCart = () => {
                     </div>
                     <div className="shoppingCart__totalss" pattern="[0-9]">
                       {" "}
-                      Rs.{item.qty * item.price}/-{" "}
+                      Rs.{Math.floor(item.qty * item.price)}/-{" "}
+
+                      
                     </div>
                   </div>
                 ))
@@ -164,7 +166,7 @@ const ShopppingCart = () => {
                 >
                   {" "}
                   You haven't added any item in the cart. <br />
-                  Add something to your Cart.. <br />
+                  Add something in your Cart.. <br />
                   THANK YOU!
                 </p>
               )}
