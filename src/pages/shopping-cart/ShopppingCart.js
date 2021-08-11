@@ -15,12 +15,10 @@ const ShopppingCart = () => {
   const [totalItems, setTotalItems] = useState(0);
   const cart = useSelector((state) => state.productlisting.cart);
   // const CartId = cart.map((cId) => cId.id);
-  // const qtyy = cart.map((q) => q.qty);
-  // console.log(qtyy, "qty")
 
   // console.log(CartId, "ok hello");
-
-  const id = cart.map((cId) => cId.id);
+  // const qtyy = cart.map((q) => q.qty);
+  // console.log(qtyy, "qty")
 
   const singledata = cart.length;
 
@@ -47,10 +45,14 @@ const ShopppingCart = () => {
     setTotalPrice(price);
   }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems]);
 
-  const [count, setCount] = useState(1);
+  
+
+  // const [count, setCount] = useState(totalItems);
 
   // if (count <= 1) {
-  //   decrementCounterr = () => setCount(1);
+  //  setCount(1) 
+     
+   
   // }
   //  if (!singledata) {
   //      return (
@@ -107,7 +109,7 @@ const ShopppingCart = () => {
                     </div>
                     <div className="shoppingCart__quantity-remove">
                       <div className="shoppingCart__quantity">
-                        <div
+                        {/* <button
                           className="shoppingCart__quantityMinus"
                           onClick={(e) => {
                             setCount(count + 1);
@@ -116,17 +118,20 @@ const ShopppingCart = () => {
                         >
                           {" "}
                           +{" "}
-                        </div>
+                        </button> */}
 
                         <input
                           type="number"
+                          min="1"
+                          
                           value={item.qty}
-                          onChange={(e) => {
-                            setCount(e.target.value);
+                          onChange={(e) => { 
+                            // setCount(e.target.value);
+
                             adjustQty(item.id, e.target.value);
                           }}
                         />
-                        <div
+                        {/* <div
                           className="shoppingCart__quantityPlus"
                           onClick={(e) => {
                             setCount(count - 1);
@@ -135,7 +140,7 @@ const ShopppingCart = () => {
                         >
                           {" "}
                           -{" "}
-                        </div>
+                        </div> */}
                       </div>
 
                       <div
@@ -146,11 +151,9 @@ const ShopppingCart = () => {
                         <DeleteIcon />{" "}
                       </div>
                     </div>
-                    <div className="shoppingCart__totalss" pattern="[0-9]">
+                    <div className="shoppingCart__totalss">
                       {" "}
                       Rs.{Math.floor(item.qty * item.price)}/-{" "}
-
-                      
                     </div>
                   </div>
                 ))
@@ -193,7 +196,9 @@ const ShopppingCart = () => {
                 </div>
                 <div className="shoppingCart__prices">
                   <div className="shoppingCart__subtotal"> SUBTOTAL:</div>{" "}
-                  <div className="shoppingCart__price">Rs.{totalPrice}/-</div>
+                  <div className="shoppingCart__price">
+                    Rs.{Math.floor(totalPrice)}/-
+                  </div>
                 </div>
                 <div className="shoppingCart__shipping-Fee">
                   <div className="shoppingCart__shipping">
@@ -210,7 +215,7 @@ const ShopppingCart = () => {
 
                 <div className="shoppingCart__grand-total">
                   <div className="shoppingCart__grand">GRAND TOTAL</div>
-                  <div className="shoppingCart__total"> Rs.{totalPrice}/- </div>
+                  <div className="shoppingCart__total"> Rs.{Math.floor(totalPrice)}/- </div>
                 </div>
 
                 <div className="shoppingCart__vatIncluded">* VAT included</div>

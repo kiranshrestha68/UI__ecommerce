@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./productdetail.css";
 import Topbar from "../../component/Topbar/Topbar";
 import Location from "../../component/location/Location";
@@ -9,17 +9,18 @@ import jersey3 from "../../assests/images/jersey3.jpeg";
 import jacket from "../../assests/images/jacket.jpg";
 import StarIcon from "@material-ui/icons/Star";
 import ProductDetailCard from "../../component/productDetail-card/ProductDetailCard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import actions from "../home/redux/actions"
 
 const ProductDetail = () => {
-  const [counter, setCounter] = useState(1);
-  const incrementCounter = () => setCounter(counter + 1);
-  let decrementCounter = () => setCounter(counter - 1);
+  // const [counter, setCounter] = useState(1);
+  // const incrementCounter = () => setCounter(counter + 1);
+  // let decrementCounter = () => setCounter(counter - 1);
 
-  if (counter <= 1) {
-    decrementCounter = () => setCounter(1);
-  }
+  // if (counter <= 1) {
+  //   decrementCounter = () => setCounter(1);
+  // }
 
   const { id } = useParams();
   console.log(id);
@@ -40,6 +41,19 @@ const ProductDetail = () => {
   //     </h2>
   //   );
   // }
+
+  const dispatch = useDispatch();
+
+  const addToCart = (ids) => {
+    dispatch(actions.addToCart(ids));
+  };
+
+  // const adjustQty = (id, value) => {
+  //   dispatch(actions.adjustItemQty(id, value));
+  // };
+
+  const cart = useSelector((state) => state.productlisting.cart);
+  const CartId = cart.map((cId) => cId.id);
 
   return (
     <>
@@ -86,16 +100,33 @@ const ProductDetail = () => {
                         </div>
                       </div>
                       <div className="addtobuttom__quantity">
-                        <button className="addtocart"> Add to Cart </button>
-                        <div className="quantity__control">
+
+                      {CartId.includes(m.id) ? (
+
+                      
+                        <button className="addtocart" > Added to Cart </button>
+
+                  
+                      ) : ( <button className="addtocart" onClick={(e) => addToCart(m.id)}> Add to cart </button>)}
+
+
+                        {/* <div className="quantity__control">
                           <button
                             className="quantity__controlItems"
-                            onClick={incrementCounter}
+                            onClick={(e) => {incrementCounter();
+                              adjustQty(m.id, e.target.valu);
+                            
+                            } }     
+
                           >
                             {" "}
                             +{" "}
                           </button>
-                          <span className="quantity__number"> {counter} </span>
+
+
+
+                          
+                          <span className="quantity__number" valu={counter}> {counter} </span>
                           <button
                             className="quantity__controlItems"
                             onClick={decrementCounter}
@@ -103,7 +134,7 @@ const ProductDetail = () => {
                             {" "}
                             -{" "}
                           </button>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
