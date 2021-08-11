@@ -14,7 +14,7 @@
   box-shadow: 0px 10px 10px -15px #111;
   z-index: 999;
 
-  /* overflow: hidden; */
+ 
 }
 .topbar__row {
   display: flex;
