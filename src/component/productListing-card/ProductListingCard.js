@@ -19,7 +19,7 @@ const ProductListingCard = ({ id, title, price, desc, category, image }) => {
     <>
       <div className="productListing__card " key={id}>
         <div className="productListing__images">
-          <img src={image} alt="bag" />
+          <img src={image} alt={title} />
         </div>
         <div className="productListing__title-price">
           <div className="productListing__title">

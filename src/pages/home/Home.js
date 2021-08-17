@@ -16,17 +16,13 @@ const Home = () => {
 
   const [product, setProduct] = useState([]);
   console.log(products);
-  
-
-
 
   useEffect(() => {
     setProduct(products);
-  },[products])
+  }, [products]);
 
-  // console.log(product)
-
-
+  // const categoryTypes = [...new Set(product.map((prod) => prod.category))];
+  // console.log(categoryTypes, "categories");
 
   const loading = useSelector((state) => state.productlisting.loading);
 
@@ -36,7 +32,6 @@ const Home = () => {
 
   useEffect((data) => {
     dispatch(actions.loadproduct(data));
-
   }, []);
 
   const linkName = readMore ? "view less " : "view more... ";
@@ -50,7 +45,10 @@ const Home = () => {
 
   return (
     <div>
-      <Topbar onChange={(e) => setsearchTerm(e.target.value)} onClick={() => setProduct(products)} />
+      <Topbar
+        onChange={(e) => setsearchTerm(e.target.value)}
+        onClick={() => setProduct(products)}
+      />
 
       <Location />
 
@@ -58,8 +56,13 @@ const Home = () => {
         <div className="home__sidebarCategory">
           <h1> Categories </h1>
           <ul>
+            {/* {categoryTypes.map((cat) => {
+              return <li onClick={() => filterItem(cat)}>{cat}</li>;
+            })} */}
             <li onClick={() => filterItem("men's clothing")}>Men's Clothing</li>
-            <li onClick={() => filterItem("women's clothing")}>Womens Clothing</li>
+            <li onClick={() => filterItem("women's clothing")}>
+              Womens Clothing
+            </li>
             <li onClick={() => filterItem("jewelery")}>Jwellery</li>
             <li onClick={() => filterItem("electronics")}> Electronics</li>
           </ul>
