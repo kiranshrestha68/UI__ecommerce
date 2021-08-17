@@ -15,11 +15,9 @@ const ProductListingCard = ({ id, title, price, desc, category, image }) => {
   const cart = useSelector((state) => state.productlisting.cart);
   const CartId = cart.map((cId) => cId.id);
 
- 
-
   return (
     <>
-      <div className="productListing__card ">
+      <div className="productListing__card " key={id}>
         <div className="productListing__images">
           <img src={image} alt="bag" />
         </div>
@@ -42,7 +40,10 @@ const ProductListingCard = ({ id, title, price, desc, category, image }) => {
             className="productListing__addToCart"
             // onClick={() => addToCart(id)}
           >
-            <NavLink style={{color: "inherit", textDecoration: 'none'}} to="/shopping-cart">
+            <NavLink
+              style={{ color: "inherit", textDecoration: "none" }}
+              to="/shopping-cart"
+            >
               {" "}
               View Cart{" "}
             </NavLink>

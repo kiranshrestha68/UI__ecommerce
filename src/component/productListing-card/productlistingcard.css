@@ -5,6 +5,8 @@
   flex-direction: column;
   width: 15%;
   min-width: 180px;
+  /* min-height: 100px; */
+  height: 350px;
   padding: 5px;
   margin: 1%;
   border: 1px solid #e2d8d8;

@@ -32,7 +32,7 @@ const Topbar = (props) => {
   <div className="topbar">
       <div className="topbar__row">
         <div className="row-1">
-          <div className="title__logo">
+          <div className="title__logo" onClick={props.onClick}>
             <NavLink to="/" className="link__header">
               KStha_
             </NavLink>
@@ -45,7 +45,7 @@ const Topbar = (props) => {
         
        
         <div className={click ? "row-2 active" : "row-2"}>
-          <div className="nav-items">
+          <div className="nav-items" onClick={props.onClick}>
             <NavLink
               to="/"
               className="link"

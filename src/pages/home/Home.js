@@ -13,6 +13,21 @@ const Home = () => {
   const [searchTerm, setsearchTerm] = useState("");
 
   const products = useSelector((state) => state.productlisting.allproducts);
+
+  const [product, setProduct] = useState([]);
+  console.log(products);
+  
+
+
+
+  useEffect(() => {
+    setProduct(products);
+  },[products])
+
+  // console.log(product)
+
+
+
   const loading = useSelector((state) => state.productlisting.loading);
 
   const error = useSelector((state) => state.productlisting.error);
@@ -21,12 +36,21 @@ const Home = () => {
 
   useEffect((data) => {
     dispatch(actions.loadproduct(data));
+
   }, []);
+
   const linkName = readMore ? "view less " : "view more... ";
+
+  const filterItem = (categItem) => {
+    const updatedItems = products.filter((curlElem) => {
+      return curlElem.category === categItem;
+    });
+    setProduct(updatedItems);
+  };
 
   return (
     <div>
-      <Topbar onChange={(e) => setsearchTerm(e.target.value)} />
+      <Topbar onChange={(e) => setsearchTerm(e.target.value)} onClick={() => setProduct(products)} />
 
       <Location />
 
@@ -34,10 +58,10 @@ const Home = () => {
         <div className="home__sidebarCategory">
           <h1> Categories </h1>
           <ul>
-            <li>Mens Clothing</li>
-            <li>Womens Clothing</li>
-            <li>Jwellery</li>
-            <li> Electronics</li>
+            <li onClick={() => filterItem("men's clothing")}>Men's Clothing</li>
+            <li onClick={() => filterItem("women's clothing")}>Womens Clothing</li>
+            <li onClick={() => filterItem("jewelery")}>Jwellery</li>
+            <li onClick={() => filterItem("electronics")}> Electronics</li>
           </ul>
           <div
             className="home__seeMoreContent"
@@ -50,7 +74,7 @@ const Home = () => {
                 <ul>
                   <li> Showcase</li>
                   <li> packaging Bags</li>
-                  <li> Excavators</li>
+                  <li> Excavatorss</li>
                   <li> Dining Chairs</li>
                 </ul>
               </div>
@@ -97,37 +121,32 @@ const Home = () => {
         </div>
 
         <div className="home__productListing">
-          {products.loading && <p> loading... </p>}
-          {products
-            .filter((val) => {
-              if (searchTerm === "") {
-                return val;
-              } else if (
-                val.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                val.category.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              }
-            } )
-            .map((p) => (
-              <ProductListingCard
-                key={p.id}
-                id={p.id}
-                title={p.title}
-                price={p.price}
-                desc={p.description}
-                category={p.category}
-                image={p.image}
-              />
-            ))}
+          {product.loading && <p> loading... </p>}
+          {product &&
+            product
+              .filter((val) => {
+                if (searchTerm === "") {
+                  return val;
+                } else if (
+                  val.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                  val.category.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return val;
+                }
+              })
+              .map((p) => (
+                <ProductListingCard
+                  key={p.id}
+                  id={p.id}
+                  title={p.title}
+                  price={p.price}
+                  desc={p.description}
+                  category={p.category}
+                  image={p.image}
+                />
+              ))}
 
-
-            {/* {movies
-        .filter((film) => film.original_language !== "hi")
-        .map((m) => ( */}
-
-
-          {products.length === 0 && !loading && <p> No products found</p>}
+          {product.length === 0 && !loading && <p> No products found</p>}
           {error && !loading && <p> {error} </p>}
         </div>
       </div>
