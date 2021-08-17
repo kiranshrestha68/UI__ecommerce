@@ -11,7 +11,7 @@ import StarIcon from "@material-ui/icons/Star";
 import ProductDetailCard from "../../component/productDetail-card/ProductDetailCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import actions from "../home/redux/actions"
+import actions from "../home/redux/actions";
 
 const ProductDetail = () => {
   // const [counter, setCounter] = useState(1);
@@ -100,15 +100,17 @@ const ProductDetail = () => {
                         </div>
                       </div>
                       <div className="addtobuttom__quantity">
-
-                      {CartId.includes(m.id) ? (
-
-                      
-                        <button className="addtocart" > Added to Cart </button>
-
-                  
-                      ) : ( <button className="addtocart" onClick={(e) => addToCart(m.id)}> Add to cart </button>)}
-
+                        {CartId.includes(m.id) ? (
+                          <button className="addtocart"> Added to Cart </button>
+                        ) : (
+                          <button
+                            className="addtocart"
+                            onClick={(e) => addToCart(m.id)}
+                          >
+                            {" "}
+                            Add to cart{" "}
+                          </button>
+                        )}
 
                         {/* <div className="quantity__control">
                           <button
@@ -139,61 +141,121 @@ const ProductDetail = () => {
                     </div>
                   </div>
 
-                  <div className="details">
-                    <div className="productDetails__size">
-                      <div className="size__title">Size</div>
-                      <div className="sizes">
-                        <div className="size1">m</div>
-                        <div className="size">s</div>
-                        <div className="size">l</div>
-                        <div className="size">xl</div>
-                        <div className="size">xxl</div>
-                      </div>
-                    </div>
-
-                    <div className="productDetails__colors">
-                      <div className="color__title">Colors</div>
-                      <div className="colors">
-                        <div className="white"></div>
-                        <div className="black"></div>
-                        <div className="dark__red"></div>
-                        <div className="fikka__blue"></div>
-                        <div className="fikka__green"></div>
-                        <div className="sky__blue"></div>
-                        <div className="pink"></div>
-                      </div>
-                    </div>
-
-                    <div className="desc__rev">
-                      <span className="desc"> Description</span>
-                      <span className="rev">
-                        {" "}
-                        Reviews <span className="rev__23"> 23 </span>
-                      </span>
-                    </div>
-
-                    <div className="size__measurement">
-                      <div className="sizeMeasurement__title">
-                        Size Measurement (in inch):
-                      </div>
-
-                      <div className="measurements">
-                        <div className="measurement">
-                          {" "}
-                          - M (medium):&emsp;Chest 37, Height 27
-                        </div>
-                        <div className="measurement">
-                          {" "}
-                          - L (large):&emsp;Chest 39, Height 28
-                        </div>
-
-                        <div className="measurement">
-                          {" "}
-                          - XL (Extra large):&emsp;Chest 41, Height 29
+                  {m.category === "men's clothing" ? (
+                    <div className="details">
+                      <div className="productDetails__size">
+                        <div className="size__title">Size</div>
+                        <div className="sizes">
+                          <div className="size1">m</div>
+                          <div className="size">s</div>
+                          <div className="size">l</div>
+                          <div className="size">xl</div>
+                          <div className="size">xxl</div>
                         </div>
                       </div>
+
+                      <div className="productDetails__colors">
+                        <div className="color__title">Colors</div>
+                        <div className="colors">
+                          <div className="white"></div>
+                          <div className="black"></div>
+                          <div className="dark__red"></div>
+                          <div className="fikka__blue"></div>
+                          <div className="fikka__green"></div>
+                          <div className="sky__blue"></div>
+                          <div className="pink"></div>
+                        </div>
+                      </div>
+
+                      <div className="desc__rev">
+                        <span className="desc"> Description</span>
+                        <span className="rev">
+                          {" "}
+                          Reviews <span className="rev__23"> 23 </span>
+                        </span>
+                      </div>
+
+                      <div className="size__measurement">
+                        <div className="sizeMeasurement__title">
+                          Size Measurement (in inch):
+                        </div>
+
+                        <div className="measurements">
+                          <div className="measurement">
+                            {" "}
+                            - M (medium):&emsp;Chest 37, Height 27
+                          </div>
+                          <div className="measurement">
+                            {" "}
+                            - L (large):&emsp;Chest 39, Height 28
+                          </div>
+
+                          <div className="measurement">
+                            {" "}
+                            - XL (Extra large):&emsp;Chest 41, Height 29
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  ) : m.category === "women's clothing" ? (
+                    <div className="details">
+                      <div className="productDetails__size">
+                        <div className="size__title">Size</div>
+                        <div className="sizes">
+                          <div className="size1">m</div>
+                          <div className="size">s</div>
+                          <div className="size">l</div>
+                          <div className="size">xl</div>
+                          {/* <div className="size">xxl</div> */}
+                        </div>
+                      </div>
+
+                      <div className="productDetails__colors">
+                        <div className="color__title">Colors</div>
+                        <div className="colors">
+                          <div className="white"></div>
+                          <div className="black"></div>
+                          <div className="dark__red"></div>
+                          <div className="fikka__blue"></div>
+                          <div className="fikka__green"></div>
+                          <div className="sky__blue"></div>
+                          <div className="pink"></div>
+                        </div>
+                      </div>
+
+                      <div className="desc__rev">
+                        <span className="desc"> Description</span>
+                        <span className="rev">
+                          {" "}
+                          Reviews <span className="rev__23"> 59 </span>
+                        </span>
+                      </div>
+
+                      <div className="size__measurement">
+                        <div className="sizeMeasurement__title">
+                          Size Measurement (in inch):
+                        </div>
+
+                        <div className="measurements">
+                          <div className="measurement">
+                            {" "}
+                            - M (medium):&emsp;Chest 30, Height 15
+                          </div>
+                          <div className="measurement">
+                            {" "}
+                            - L (large):&emsp;Chest 39, Height 20
+                          </div>
+
+                          {/* <div className="measurement">
+                            {" "}
+                            - XL (Extra large):&emsp;Chest 41, Height 29
+                          </div> */}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div> {undefined}</div>
+                  )}
                 </div>
               ))}
 

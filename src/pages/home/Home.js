@@ -34,9 +34,10 @@ const Home = () => {
         <div className="home__sidebarCategory">
           <h1> Categories </h1>
           <ul>
-            <li>Shoppoing Bags</li>
-            <li>Prefab houses</li>
-            <li>Handbags</li>
+            <li>Mens Clothing</li>
+            <li>Womens Clothing</li>
+            <li>Jwellery</li>
+            <li> Electronics</li>
           </ul>
           <div
             className="home__seeMoreContent"
@@ -107,7 +108,7 @@ const Home = () => {
               ) {
                 return val;
               }
-            })
+            } )
             .map((p) => (
               <ProductListingCard
                 key={p.id}
@@ -119,6 +120,13 @@ const Home = () => {
                 image={p.image}
               />
             ))}
+
+
+            {/* {movies
+        .filter((film) => film.original_language !== "hi")
+        .map((m) => ( */}
+
+
           {products.length === 0 && !loading && <p> No products found</p>}
           {error && !loading && <p> {error} </p>}
         </div>
