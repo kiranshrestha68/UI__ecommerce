@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./pagination.css";
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 const CustomPagination = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNumbers = [];
@@ -16,6 +16,7 @@ const CustomPagination = ({ postsPerPage, totalPosts, paginate }) => {
     <div className="pagination__container">
       <ul>
         {pageNumbers.map((number) => (
+          
           <li>
             <NavLink
               to="/"
@@ -24,13 +25,15 @@ const CustomPagination = ({ postsPerPage, totalPosts, paginate }) => {
               key={number}
               onClick={() => paginate(number)}
             >
-             
               {number}
             </NavLink>
           </li>
-        ))}
+        
 
-<ChevronRightIcon/>       
+
+        ))}
+        <ChevronRightIcon on />
+
       </ul>
     </div>
   );
