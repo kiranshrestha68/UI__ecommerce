@@ -54,6 +54,7 @@ const ProductDetail = () => {
 
   const cart = useSelector((state) => state.productlisting.cart);
   const CartId = cart.map((cId) => cId.id);
+  console.log(CartId, "ok ma id")
 
   return (
     <>

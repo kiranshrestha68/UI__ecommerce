@@ -197,6 +197,11 @@
   text-decoration: underline;
 }
 
+.home__productlisting__column{
+  display: flex;
+  flex-direction: column;
+}
+
 .home__productListing {
   flex: 10;
 

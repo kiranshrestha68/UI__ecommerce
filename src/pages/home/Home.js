@@ -7,10 +7,14 @@ import Location from "../../component/location/Location";
 import ProductListingCard from "../../component/productListing-card/ProductListingCard";
 import Topbar from "../../component/Topbar/Topbar";
 import countryData from "./countrydata";
+import Pagination from "../../component/pagination/CustomPagination";
+import CustomPagination from "../../component/pagination/CustomPagination";
 
 const Home = () => {
   const [readMore, setReadMore] = useState(false);
   const [searchTerm, setsearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
 
   const products = useSelector((state) => state.productlisting.allproducts);
 
@@ -20,6 +24,16 @@ const Home = () => {
   useEffect(() => {
     setProduct(products);
   }, [products]);
+
+  //get current posts
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = product.slice(indexOfFirstPost, indexOfLastPost);
+
+  // change page
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // const categoryTypes = [...new Set(product.map((prod) => prod.category))];
   // console.log(categoryTypes, "categories");
@@ -123,10 +137,12 @@ const Home = () => {
           </div>
         </div>
 
+        
+
         <div className="home__productListing">
           {product.loading && <p> loading... </p>}
-          {product &&
-            product
+          {currentPosts &&
+            currentPosts
               .filter((val) => {
                 if (searchTerm === "") {
                   return val;
@@ -151,8 +167,16 @@ const Home = () => {
 
           {product.length === 0 && !loading && <p> No products found</p>}
           {error && !loading && <p> {error} </p>}
+       
         </div>
+     
       </div>
+      <CustomPagination
+        postsPerPage={postsPerPage}
+        totalPosts={product.length}
+        paginate={paginate}
+      />
+   
     </div>
   );
 };
