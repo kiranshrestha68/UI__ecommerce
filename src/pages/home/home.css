@@ -3,7 +3,6 @@
 .home__row {
   display: flex;
   padding: 0 6%;
-  
 }
 
 .home__sidebarCategory {
@@ -112,7 +111,6 @@
   background-color: transparent;
   cursor: pointer;
   color: #4e4848;
-  
 }
 
 .home__minOrderContent > button:hover {
@@ -197,7 +195,7 @@
   text-decoration: underline;
 }
 
-.home__productlisting__column{
+.home__productlisting__column {
   display: flex;
   flex-direction: column;
 }
@@ -209,12 +207,48 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
- 
 }
 
 @media screen and (max-width: 1160px) {
-
-  .home__sidebarCategory{
+  .home__sidebarCategory {
     display: none;
   }
+}
+
+.paginationBttns {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  /* margin: 8px; */
+  border-radius: 5px;
+  
+  color: black;
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  color: #645d5d;
+  /* background-color: #888181; */
+  border-radius: 50%;
+  padding: 5px 10px;
+
+  
+}
+
+.paginationActive a {
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+
+.paginationDisabled a {
+  color: #afaaaa;
+  /* background-color: grey; */
 }

@@ -7,14 +7,20 @@ import Location from "../../component/location/Location";
 import ProductListingCard from "../../component/productListing-card/ProductListingCard";
 import Topbar from "../../component/Topbar/Topbar";
 import countryData from "./countrydata";
-import Pagination from "../../component/pagination/CustomPagination";
-import CustomPagination from "../../component/pagination/CustomPagination";
+// import Pagination from "../../component/pagination/CustomPagination";
+// import CustomPagination from "../../component/pagination/CustomPagination";
+import ReactPaginate from "react-paginate";
+import Footer from "../../component/footer/Footer";
+// import { Pagination } from "@material-ui/lab";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
+
 
 const Home = () => {
   const [readMore, setReadMore] = useState(false);
   const [searchTerm, setsearchTerm] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [pageNumber, setPageNumber] = useState(0);
+  const usersPerPage = 10;
 
   const products = useSelector((state) => state.productlisting.allproducts);
 
@@ -27,13 +33,14 @@ const Home = () => {
 
   //get current posts
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = product.slice(indexOfFirstPost, indexOfLastPost);
+  const pagesVisited = pageNumber * usersPerPage;
+  const displayUsers = product.slice(pagesVisited, pagesVisited + usersPerPage);
 
-  // change page
+  const pageCount = Math.ceil(product.length / usersPerPage);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   // const categoryTypes = [...new Set(product.map((prod) => prod.category))];
   // console.log(categoryTypes, "categories");
@@ -137,12 +144,10 @@ const Home = () => {
           </div>
         </div>
 
-        
-
         <div className="home__productListing">
           {product.loading && <p> loading... </p>}
-          {currentPosts &&
-            currentPosts
+          {displayUsers &&
+            displayUsers
               .filter((val) => {
                 if (searchTerm === "") {
                   return val;
@@ -167,16 +172,23 @@ const Home = () => {
 
           {product.length === 0 && !loading && <p> No products found</p>}
           {error && !loading && <p> {error} </p>}
-       
         </div>
-     
       </div>
-      <CustomPagination
-        postsPerPage={postsPerPage}
-        totalPosts={product.length}
-        paginate={paginate}
-      />
+
    
+      <ReactPaginate
+        previousLabel={<KeyboardArrowLeftIcon/>}
+        nextLabel={<ChevronRightIcon/>}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={"paginationBttns"}
+        previousLinkClassName={"previousBttn"}
+        nextLinkClassName={"nextBttn"}
+        disabledClassName={"paginationDisabled"}
+        activeClassName={"paginationActive"}
+      />
+      <hr />
+      <Footer />
     </div>
   );
 };

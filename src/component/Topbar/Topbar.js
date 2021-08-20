@@ -49,7 +49,7 @@ const Topbar = (props) => {
             <NavLink
               to="/"
               className="link"
-              
+              exact
               activeClassName="menu__active"
             >
               Home

@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&family=Roboto:wght@500&family=STIX+Two+Text:wght@400;600;700&display=swap");
+
+
+.footer__container{
+    display: flex;
+    /* justify-content: space-around; */
+    /* background-color: #272626; */
+    color: #5c5555;
+  font-family: "STIX Two Text", serif;
+  padding: 3% 3%;
+
+}
+
+.footer__row1{
+    flex: 3
+}
+
+.footer__social-media{
+   /* color: black; */
+   margin: 0 3px; 
+}
+.footer__row2{
+    flex: 3
+}
+.footer__row3{
+    flex: 3
+}
+
+.footer__row4{
+    flex: 3
+}
+
