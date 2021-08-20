@@ -20,7 +20,7 @@ const Home = () => {
   const [readMore, setReadMore] = useState(false);
   const [searchTerm, setsearchTerm] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
-  const usersPerPage = 10;
+  const usersPerPage = 8;
 
   const products = useSelector((state) => state.productlisting.allproducts);
 
@@ -187,7 +187,7 @@ const Home = () => {
         disabledClassName={"paginationDisabled"}
         activeClassName={"paginationActive"}
       />
-      <hr />
+     
       <Footer />
     </div>
   );

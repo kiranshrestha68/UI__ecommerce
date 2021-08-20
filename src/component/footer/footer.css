@@ -1,32 +1,136 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&family=Roboto:wght@500&family=STIX+Two+Text:wght@400;600;700&display=swap");
 
-
-.footer__container{
-    display: flex;
-    /* justify-content: space-around; */
-    /* background-color: #272626; */
-    color: #5c5555;
-  font-family: "STIX Two Text", serif;
+.footer__container {
+  display: flex;
+  /* justify-content: space-around; */
+  /* background-color: #272626; */
+  color: #5c5555;
   padding: 3% 3%;
+  margin: 1% 0;
+  /* background-color: wheat; */
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
 
 }
 
-.footer__row1{
-    flex: 3
+.footer__row1 {
+  flex: 3;
 }
 
-.footer__social-media{
-   /* color: black; */
-   margin: 0 3px; 
-}
-.footer__row2{
-    flex: 3
-}
-.footer__row3{
-    flex: 3
+.footer__row1 > h3 {
+  margin-bottom: 22px;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
 }
 
-.footer__row4{
-    flex: 3
+.footer__social-media {
+  /* color: black; */
+  margin: 0 3px;
+}
+.footer__row2 {
+  flex: 3;
 }
 
+.footer__row2 > p {
+  font-size: 19px;
+  font-family: "STIX Two Text", serif;
+  margin-bottom: 15px;
+}
+
+.footer__row2-items > span {
+  display: flex;
+  flex-direction: column;
+  font-family: "STIX Two Text", serif;
+  margin: 5px 0;
+  /* font-weight: bold; */
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.footer__row2-items > span:hover {
+  text-decoration: underline;
+  color: #161616;
+}
+
+.footer__row3 {
+  flex: 3;
+}
+
+.footer__row3 > p {
+  font-size: 19px;
+  font-family: "STIX Two Text", serif;
+  margin-bottom: 15px;
+}
+
+.footer__row3-items > span {
+  display: flex;
+  flex-direction: column;
+  font-family: "STIX Two Text", serif;
+  margin: 5px 0;
+  /* font-weight: bold; */
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.footer__row3-items > span:hover {
+  text-decoration: underline;
+  color: #333131;
+}
+
+.footer__row4 {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+.footer__row4-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer__row4-item > p {
+  font-size: 17px;
+  margin-left: 10px;
+  font-family: "STIX Two Text", serif;
+}
+
+.footer__row4 > input {
+  border-bottom: 1px solid grey;
+  border-radius: 30px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 50px;
+  margin-bottom: 18px;
+  padding: 10px;
+  outline: none;
+  font-size: 20px;
+  color: #202020;
+  width: 90%;
+  font-family: "STIX Two Text", serif;
+}
+
+::placeholder {
+  font-size: 20px;
+  font-family: "STIX Two Text", serif;
+}
+
+.footer__row4 > button {
+  padding: 10px;
+  margin: 0 65% 0 0;
+  border: 1px solid #f04c4c;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: "STIX Two Text", serif;
+  background-color: #f04c4c;
+  color: wheat;
+  cursor: pointer;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.footer__row4 > button:hover {
+  background-color: red;
+  color: white;
+  transition: 0.8s all;
+}
