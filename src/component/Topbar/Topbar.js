@@ -57,7 +57,7 @@ const Topbar = (props) => {
           </div>
           <div className="nav-items">
             <NavLink
-              to="the-shop"
+             to="/shopping-cart"
               className="link"
               activeClassName="menu__active"
             >
@@ -65,23 +65,24 @@ const Topbar = (props) => {
             </NavLink>
           </div>
           <div className="nav-items">
-            <NavLink to="mens-clothing" className="link">
+            <NavLink to="mens-clothing" className="link" activeClassName="menu__active">
               Men's Clothing
             </NavLink>{" "}
-            <ExpandMoreIcon />{" "}
+            {/* <ExpandMoreIcon />{" "} */}
           </div>
           <div className="nav-items">
-            <NavLink to="womens" className="link">
+            <NavLink to="womens" className="link"  activeClassName="menu__active">
               Women's
             </NavLink>{" "}
-            <ExpandMoreIcon />{" "}
+            {/* <ExpandMoreIcon />{" "} */}
           </div>
           <div className="nav-items">
-            <NavLink to="kids-and-boys" className="link">
-              Kids & Boys
+            <NavLink to="kids-and-boys" className="link" activeClassName="menu__active">
+              Electronics
             </NavLink>{" "}
-            <ExpandMoreIcon />{" "}
+          
           </div>
+       
         </div>
 
         <div className="row-3">

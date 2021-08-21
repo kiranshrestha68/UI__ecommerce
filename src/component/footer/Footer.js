@@ -7,6 +7,9 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import EmailIcon from "@material-ui/icons/Email";
 
 const Footer = () => {
+  const handleClick = () => {
+    window.alert("Thanks for your subscription; ");
+  }
   return (
     <>
       <div className="footer__container">
@@ -64,7 +67,7 @@ const Footer = () => {
             <p> Stay upto date latest from the KStha_ </p>
           </div>
           <input placeholder="Enter your Email"/>
-          <button>Sign Up</button>
+          <button onClick={handleClick}>Subscribe</button>
         </div>
         
       </div>

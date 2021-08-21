@@ -40,6 +40,7 @@ const Home = () => {
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
+    window.scroll(0,0);
   };
 
   // const categoryTypes = [...new Set(product.map((prod) => prod.category))];
