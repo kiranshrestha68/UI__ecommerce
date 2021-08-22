@@ -9,6 +9,7 @@ import esewa from "./images/esewa1.png";
 import khalti from "./images/khalti1.png";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../home/redux/actions";
+import Footer from "../../component/footer/Footer";
 
 const ShopppingCart = () => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -230,6 +231,7 @@ const ShopppingCart = () => {
           )}
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

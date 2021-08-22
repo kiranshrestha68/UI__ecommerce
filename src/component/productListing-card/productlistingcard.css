@@ -45,7 +45,7 @@
   flex-direction: column;
 }
 
-.productListing__link{
+.productListing__link {
   color: inherit;
   text-decoration: none;
 }
@@ -107,11 +107,8 @@
 }
 
 @media screen and (max-width: 1160px) {
-
-  .productListing__card{
+  .productListing__card {
     height: 250px;
-    
-    
   }
 
   .productListing__title {
@@ -152,6 +149,5 @@
     margin-bottom: 8px;
     font-weight: bold;
     font-size: 12px;
-
-}
+  }
 }

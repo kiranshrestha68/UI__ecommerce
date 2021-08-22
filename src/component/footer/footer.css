@@ -134,3 +134,27 @@
   color: white;
   transition: 0.8s all;
 }
+
+@media screen and (max-width: 1160px){
+.footer__container{
+  display: flex;
+  flex-direction: column;
+}
+.footer__row3{
+  display: none;
+}
+
+.footer__row2{
+  display: none;
+}
+
+.footer__row4{
+  margin-top: 30px;
+}
+
+
+.footer__row4>input{
+  border: 1px solid #d0c9c9;
+  margin-top: 8px;
+}
+}
